@@ -1,0 +1,15 @@
+<p>list works!</p>
+<a [routerLink]="'create'">Create New</a>
+<table>
+  <tr>
+    <th>name</th>
+    <th>des</th>
+    <th>action</th>
+  </tr>
+  <tr *ngFor="let p of products">
+    <td><a [routerLink]="'detail/'+ p.id">{{p.name}}</a></td>
+    <td>{{p.description}}</td>
+    <td><a [routerLink]="'edit/'+p.id">Edit</a></td>
+    <td><button (click)="products.splice(p.id-1,1)">Del</button></td>
+  </tr>
+</table>
